@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Yavarum Kelir</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',sans-serif;color:#2d2d2d;background:#fffdf8}
+a{text-decoration:none;color:inherit}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:#fffdf8;border-bottom:1px solid #e8dfc8;display:flex;justify-content:space-between;align-items:center;padding:0.9rem 2.5rem}
+.logo{display:flex;align-items:center;gap:10px}
+.logo-circle{width:38px;height:38px;border-radius:50%;background:#e07b39;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:15px}
+.logo-text{font-size:1.15rem;font-weight:700;color:#c05e1a}
+.logo-sub{font-size:0.72rem;color:#8a6a4a;margin-top:1px}
+.nav-links{display:flex;gap:1.8rem;list-style:none}
+.nav-links a{font-size:0.88rem;color:#5a4030;font-weight:500;transition:color 0.2s}
+.nav-links a:hover{color:#e07b39}
+.nav-cta{background:#e07b39;color:#fff!important;padding:0.4rem 1rem;border-radius:20px;font-size:0.85rem!important}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,#fff4e6 0%,#fff9f0 50%,#f0f7ee 100%);padding:5rem 2.5rem 4rem;text-align:center}
+.hero-badge{display:inline-block;background:#fde8cb;color:#b85a0e;font-size:0.78rem;font-weight:600;padding:0.3rem 1rem;border-radius:20px;margin-bottom:1.2rem;letter-spacing:0.5px}
+.hero h1{font-size:3rem;font-weight:800;color:#b84e0e;line-height:1.15;margin-bottom:0.6rem}
+.hero h1 span{color:#3a7d44}
+.hero-tagline{font-size:1.15rem;color:#6b4c2a;max-width:560px;margin:0 auto 0.7rem;line-height:1.6}
+.hero-tamil{font-size:0.92rem;color:#9a7450;font-style:italic;margin-bottom:2rem}
+.hero-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.btn-primary{background:#e07b39;color:#fff;padding:0.7rem 1.8rem;border-radius:25px;font-weight:600;font-size:0.95rem;transition:background 0.2s}
+.btn-primary:hover{background:#c05e1a}
+.btn-secondary{background:transparent;color:#3a7d44;border:2px solid #3a7d44;padding:0.7rem 1.8rem;border-radius:25px;font-weight:600;font-size:0.95rem;transition:all 0.2s}
+.btn-secondary:hover{background:#3a7d44;color:#fff}
+.hero-stats{display:flex;justify-content:center;gap:3rem;margin-top:3.5rem;flex-wrap:wrap}
+.stat{text-align:center}
+.stat-num{font-size:2rem;font-weight:800;color:#e07b39}
+.stat-label{font-size:0.8rem;color:#8a6a4a;margin-top:2px}
+
+/* SECTION COMMON */
+section{padding:4rem 2.5rem}
+.section-label{font-size:0.78rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:#e07b39;margin-bottom:0.5rem}
+.section-title{font-size:2rem;font-weight:700;color:#3a2a1a;margin-bottom:0.6rem}
+.section-sub{color:#6b4c2a;font-size:1rem;line-height:1.6;max-width:580px}
+.section-header{margin-bottom:2.5rem}
+
+/* ABOUT */
+.about{background:#fffdf8}
+.about-inner{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;max-width:1000px;margin:0 auto}
+.about-text p{color:#5a3f28;line-height:1.75;margin-bottom:1rem;font-size:0.97rem}
+.about-values{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.5rem}
+.value-card{background:#fff7ed;border-left:3px solid #e07b39;padding:0.8rem 1rem;border-radius:0 8px 8px 0}
+.value-card h4{font-size:0.88rem;font-weight:600;color:#b84e0e;margin-bottom:3px}
+.value-card p{font-size:0.8rem;color:#7a5235;line-height:1.4}
+.about-image{background:linear-gradient(135deg,#fde8cb,#d4edda);border-radius:16px;height:320px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0.5rem}
+.about-image-icon{font-size:4rem}
+.about-image p{color:#7a5235;font-size:0.9rem;font-style:italic}
+
+/* PROGRAMS */
+.programs{background:#fdf6ec}
+.programs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem;max-width:1000px;margin:0 auto}
+.program-card{background:#fff;border-radius:14px;padding:1.5rem;border:1px solid #f0dfc0;transition:transform 0.2s,box-shadow 0.2s}
+.program-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(180,100,40,0.1)}
+.prog-icon{width:50px;height:50px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:1rem}
+.icon-edu{background:#fde8cb}
+.icon-health{background:#fce4e4}
+.icon-env{background:#d4edda}
+.icon-comm{background:#e8e0f5}
+.program-card h3{font-size:1rem;font-weight:700;color:#3a2a1a;margin-bottom:0.5rem}
+.program-card p{font-size:0.85rem;color:#6b4c2a;line-height:1.6}
+.prog-tag{display:inline-block;font-size:0.72rem;font-weight:600;margin-top:0.8rem;padding:0.25rem 0.7rem;border-radius:12px;background:#fde8cb;color:#b05010}
+
+/* GALLERY */
+.gallery{background:#fffdf8}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;max-width:1000px;margin:0 auto}
+.gallery-item{border-radius:12px;overflow:hidden;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;font-size:2rem;font-weight:700;color:#fff;position:relative}
+.gallery-item span{position:relative;z-index:1;font-size:0.85rem;font-weight:600;text-align:center;padding:0 1rem;line-height:1.4}
+.g1{background:linear-gradient(135deg,#e07b39,#f5a060)}
+.g2{background:linear-gradient(135deg,#3a7d44,#5faa6e)}
+.g3{background:linear-gradient(135deg,#d44c3a,#e8765e)}
+.g4{background:linear-gradient(135deg,#7b55c5,#a07de8)}
+.g5{background:linear-gradient(135deg,#2a8fa0,#4fbdce)}
+.g6{background:linear-gradient(135deg,#c08020,#e8aa50)}
+
+/* EVENTS */
+.events{background:#fdf6ec}
+.events-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;max-width:1000px;margin:0 auto}
+.event-card{background:#fff;border-radius:14px;border:1px solid #f0dfc0;overflow:hidden;transition:transform 0.2s,box-shadow 0.2s}
+.event-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(180,100,40,0.1)}
+.event-date-bar{padding:0.7rem 1.2rem;display:flex;align-items:center;gap:0.8rem}
+.event-date-bar.upcoming{background:#fde8cb}
+.event-date-bar.open{background:#d4edda}
+.event-date-bar.announce{background:#e8e0f5}
+.event-day{font-size:1.6rem;font-weight:800;line-height:1;color:#b84e0e}
+.event-date-bar.open .event-day{color:#2a6a30}
+.event-date-bar.announce .event-day{color:#5a30a0}
+.event-month-year{display:flex;flex-direction:column}
+.event-month-year span:first-child{font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#b84e0e}
+.event-date-bar.open .event-month-year span:first-child{color:#2a6a30}
+.event-date-bar.announce .event-month-year span:first-child{color:#5a30a0}
+.event-month-year span:last-child{font-size:0.72rem;color:#9a7450}
+.event-badge{margin-left:auto;font-size:0.68rem;font-weight:700;padding:0.25rem 0.6rem;border-radius:12px;background:rgba(255,255,255,0.7);color:#b84e0e;border:1px solid #e0c090}
+.event-date-bar.open .event-badge{color:#2a6a30;border-color:#a0d0a0}
+.event-date-bar.announce .event-badge{color:#5a30a0;border-color:#c0a0e0}
+.event-body{padding:1.1rem 1.2rem 1.3rem}
+.event-body h3{font-size:1rem;font-weight:700;color:#3a2a1a;margin-bottom:0.4rem}
+.event-body p{font-size:0.83rem;color:#6b4c2a;line-height:1.6;margin-bottom:0.8rem}
+.event-meta{display:flex;flex-direction:column;gap:4px;margin-bottom:1rem}
+.event-meta span{font-size:0.78rem;color:#9a7450;display:flex;align-items:center;gap:5px}
+.event-meta span b{color:#5a3f28}
+.event-register{display:inline-block;background:#e07b39;color:#fff;padding:0.45rem 1.1rem;border-radius:20px;font-size:0.8rem;font-weight:600;border:none;cursor:pointer;transition:background 0.2s}
+.event-register:hover{background:#c05e1a}
+.event-register.outline{background:transparent;color:#3a7d44;border:1.5px solid #3a7d44}
+.event-register.outline:hover{background:#3a7d44;color:#fff}
+.events-note{text-align:center;margin-top:1.8rem;font-size:0.83rem;color:#9a7450}
+
+/* DONATE */
+.donate{background:linear-gradient(135deg,#e07b39,#c8521c);text-align:center;color:#fff;padding:4.5rem 2.5rem}
+.donate h2{font-size:2.2rem;font-weight:800;margin-bottom:0.7rem}
+.donate p{font-size:1.05rem;opacity:0.9;max-width:520px;margin:0 auto 2rem;line-height:1.6}
+.donate-options{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;margin-bottom:2rem}
+.donate-btn{background:rgba(255,255,255,0.2);border:2px solid rgba(255,255,255,0.6);color:#fff;padding:0.6rem 1.5rem;border-radius:25px;font-weight:600;font-size:0.92rem;cursor:pointer;transition:background 0.2s}
+.donate-btn:hover,.donate-btn.active{background:#fff;color:#c05e1a}
+.donate-main-btn{background:#fff;color:#c05e1a;padding:0.8rem 2.5rem;border-radius:25px;font-weight:700;font-size:1rem;border:none;cursor:pointer;transition:transform 0.15s}
+.donate-main-btn:hover{transform:scale(1.04)}
+.donate-note{font-size:0.8rem;opacity:0.75;margin-top:1rem}
+
+/* CONTACT */
+.contact{background:#fdf6ec}
+.contact-inner{display:grid;grid-template-columns:1fr 1fr;gap:3rem;max-width:900px;margin:0 auto;align-items:start}
+.contact-info p{color:#5a3f28;font-size:0.95rem;line-height:1.7;margin-bottom:1.5rem}
+.contact-detail{display:flex;align-items:flex-start;gap:0.8rem;margin-bottom:1rem}
+.contact-icon{width:36px;height:36px;border-radius:50%;background:#fde8cb;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
+.contact-detail div p:first-child{font-weight:600;font-size:0.88rem;color:#b84e0e;margin-bottom:2px}
+.contact-detail div p:last-child{font-size:0.85rem;color:#6b4c2a}
+.contact-form{background:#fff;border-radius:14px;padding:1.8rem;border:1px solid #f0dfc0}
+.form-group{margin-bottom:1.1rem}
+.form-group label{display:block;font-size:0.82rem;font-weight:600;color:#7a5235;margin-bottom:5px}
+.form-group input,.form-group textarea,.form-group select{width:100%;padding:0.6rem 0.9rem;border:1px solid #e0cbb0;border-radius:8px;font-size:0.9rem;background:#fffdf8;color:#3a2a1a;outline:none;transition:border 0.2s;font-family:inherit}
+.form-group input:focus,.form-group textarea:focus{border-color:#e07b39}
+.form-group textarea{resize:vertical;min-height:90px}
+.form-submit{width:100%;background:#e07b39;color:#fff;border:none;padding:0.75rem;border-radius:25px;font-weight:700;font-size:0.95rem;cursor:pointer;transition:background 0.2s}
+.form-submit:hover{background:#c05e1a}
+
+/* FOOTER */
+footer{background:#2d1e0f;color:#c8a87a;padding:2.5rem 2.5rem 1.5rem;text-align:center}
+footer .foot-logo{font-size:1.3rem;font-weight:700;color:#f0c070;margin-bottom:0.3rem}
+footer .foot-tagline{font-size:0.83rem;margin-bottom:1.5rem;opacity:0.7}
+footer .foot-links{display:flex;justify-content:center;gap:2rem;margin-bottom:1.5rem;flex-wrap:wrap}
+footer .foot-links a{font-size:0.82rem;color:#c8a87a;transition:color 0.2s}
+footer .foot-links a:hover{color:#f0c070}
+footer .foot-bottom{font-size:0.75rem;opacity:0.5;border-top:1px solid rgba(200,168,122,0.2);padding-top:1.2rem;margin-top:0.5rem}
+
+@media(max-width:700px){
+  nav{padding:0.8rem 1.2rem}
+  .nav-links{display:none}
+  .hero h1{font-size:2rem}
+  .about-inner,.contact-inner{grid-template-columns:1fr}
+  .gallery-grid{grid-template-columns:repeat(2,1fr)}
+  .hero-stats{gap:1.5rem}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">
+    <div class="logo-circle">YK</div>
+    <div>
+      <div class="logo-text">Yavarum Kelir</div>
+      <div class="logo-sub">யாவரும் கேளிர் — Everyone Shall Thrive</div>
+    </div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#about">About Us</a></li>
+    <li><a href="#programs">Our Programs</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#events">Events</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#donate" class="nav-cta">Donate</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-badge">Non-Profit Organization · Founded April 2026</div>
+  <h1>A new beginning for<br><span>everyone to thrive.</span></h1>
+  <p class="hero-tagline">We are just getting started — and we need you. Join us as we build a movement rooted in education, health, environment, and community, one step at a time.</p>
+  <p class="hero-tamil">"யாவரும் கேளிர்" — Every soul is our kin</p>
+  <div class="hero-btns">
+    <a href="#donate" class="btn-primary">Be a Founding Supporter</a>
+    <a href="#programs" class="btn-secondary">Our Vision</a>
+  </div>
+  <div class="hero-stats">
+    <div class="stat"><div class="stat-num">Apr 2026</div><div class="stat-label">Founded</div></div>
+    <div class="stat"><div class="stat-num">Day 1</div><div class="stat-label">Of Our Journey</div></div>
+    <div class="stat"><div class="stat-num">∞</div><div class="stat-label">Potential</div></div>
+    <div class="stat"><div class="stat-num">You</div><div class="stat-label">Can Shape This</div></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-inner">
+    <div>
+      <div class="section-label">About Us</div>
+      <h2 class="section-title">Who we are</h2>
+      <div class="about-text">
+        <p>Yavarum Kelir was born in April 2026 — a brand-new organisation rooted in the ancient Tamil belief that every person, regardless of their background, is our kin and deserves the chance to thrive.</p>
+        <p>We are at the very beginning of our journey. Our founders came together with a shared frustration and a shared hope — that communities across Tamil Nadu deserve better access to education, healthcare, a cleaner environment, and a stronger collective voice.</p>
+        <p>We don't have decades of history yet. What we do have is conviction, a clear plan, and the energy of people who believe that meaningful change starts on day one. We invite you to be part of this story from the very first chapter.</p>
+      </div>
+      <div class="about-values">
+        <div class="value-card"><h4>Inclusivity</h4><p>Every voice matters, every life counts.</p></div>
+        <div class="value-card"><h4>Compassion</h4><p>We serve with empathy, not charity.</p></div>
+        <div class="value-card"><h4>Sustainability</h4><p>Solutions that outlast our presence.</p></div>
+        <div class="value-card"><h4>Transparency</h4><p>Accountable to those we serve.</p></div>
+      </div>
+    </div>
+    <div class="about-image">
+      <div style="font-size:3.5rem">🌿</div>
+      <p>"A community that grows together"</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAMS -->
+<section class="programs" id="programs">
+  <div class="section-header" style="text-align:center">
+    <div class="section-label">What we do</div>
+    <h2 class="section-title" style="margin:0 auto 0.6rem">Our programs</h2>
+    <p class="section-sub" style="margin:0 auto">Four pillars of impact — each addressing a critical dimension of community well-being.</p>
+  </div>
+  <div class="programs-grid">
+    <div class="program-card">
+      <div class="prog-icon icon-edu">📚</div>
+      <h3>Education &amp; Youth</h3>
+      <p>After-school tutoring, scholarship support, digital literacy camps, and mentorship for first-generation learners — launching soon in our first partner schools.</p>
+      <span class="prog-tag">Launching soon</span>
+    </div>
+    <div class="program-card">
+      <div class="prog-icon icon-health">❤️</div>
+      <h3>Health &amp; Welfare</h3>
+      <p>Mobile health clinics, nutrition programs for children, mental health awareness, and women's wellness drives — in planning with local healthcare partners.</p>
+      <span class="prog-tag" style="background:#fce4e4;color:#b03030">In planning</span>
+    </div>
+    <div class="program-card">
+      <div class="prog-icon icon-env">🌱</div>
+      <h3>Environment</h3>
+      <p>Tree plantation drives, clean water access initiatives, waste management workshops, and eco-school programs — our first drive is being planned now.</p>
+      <span class="prog-tag" style="background:#d4edda;color:#2a6a30">First drive soon</span>
+    </div>
+    <div class="program-card">
+      <div class="prog-icon icon-comm">🤝</div>
+      <h3>Community Development</h3>
+      <p>Skill training for youth and women, livelihood support, self-help groups, and local leadership building — enrolling founding volunteers now.</p>
+      <span class="prog-tag" style="background:#e8e0f5;color:#5a30a0">Enrol now</span>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery" id="gallery">
+  <div class="section-header" style="text-align:center;margin-bottom:2rem">
+    <div class="section-label">Our Impact</div>
+    <h2 class="section-title">Moments that matter</h2>
+  </div>
+  <div class="gallery-grid">
+    <div class="gallery-item g1"><span>Education Camp<br>2024</span></div>
+    <div class="gallery-item g2"><span>Village Health Drive</span></div>
+    <div class="gallery-item g3"><span>Tree Plantation<br>Tamil Nadu</span></div>
+    <div class="gallery-item g4"><span>Women's Skills<br>Workshop</span></div>
+    <div class="gallery-item g5"><span>Clean Water<br>Initiative</span></div>
+    <div class="gallery-item g6"><span>Youth Leadership<br>Forum</span></div>
+  </div>
+  <p style="text-align:center;margin-top:1.5rem;color:#9a7450;font-size:0.85rem">Replace these tiles with your actual photos to bring your work to life.</p>
+</section>
+
+<!-- EVENTS -->
+<section class="events" id="events">
+  <div class="section-header" style="text-align:center;margin-bottom:2rem">
+    <div class="section-label">Events &amp; Announcements</div>
+    <h2 class="section-title">Upcoming charity events</h2>
+    <p class="section-sub" style="margin:0 auto">Be part of our first wave of action. Join us, volunteer, or spread the word.</p>
+  </div>
+  <div class="events-grid">
+
+    <div class="event-card">
+      <div class="event-date-bar upcoming">
+        <div class="event-day">18</div>
+        <div class="event-month-year"><span>May</span><span>2026</span></div>
+        <span class="event-badge">Registrations Open</span>
+      </div>
+      <div class="event-body">
+        <h3>Founding Tree Plantation Drive</h3>
+        <p>Our very first environmental event — plant a sapling, carry a memory. Help us green one neighbourhood at a time.</p>
+        <div class="event-meta">
+          <span>📍 <b>Madurai, Tamil Nadu</b></span>
+          <span>🕘 <b>7:00 AM – 11:00 AM</b></span>
+          <span>👥 <b>Open to all · Family friendly</b></span>
+        </div>
+        <button class="event-register">Register to Join</button>
+      </div>
+    </div>
+
+    <div class="event-card">
+      <div class="event-date-bar open">
+        <div class="event-day">01</div>
+        <div class="event-month-year"><span>Jun</span><span>2026</span></div>
+        <span class="event-badge" style="color:#2a6a30;border-color:#a0d0a0">Volunteers Needed</span>
+      </div>
+      <div class="event-body">
+        <h3>Free Health &amp; Wellness Camp</h3>
+        <p>Basic health check-ups, nutrition counselling, and mental wellness sessions for underserved families in our first outreach.</p>
+        <div class="event-meta">
+          <span>📍 <b>Villupuram District</b></span>
+          <span>🕘 <b>9:00 AM – 4:00 PM</b></span>
+          <span>👥 <b>Seeking doctors &amp; nurses</b></span>
+        </div>
+        <button class="event-register outline">Volunteer Here</button>
+      </div>
+    </div>
+
+    <div class="event-card">
+      <div class="event-date-bar announce">
+        <div class="event-day">15</div>
+        <div class="event-month-year"><span>Jun</span><span>2026</span></div>
+        <span class="event-badge" style="color:#5a30a0;border-color:#c0a0e0">Fundraiser</span>
+      </div>
+      <div class="event-body">
+        <h3>Yavarum Kelir Charity Dinner</h3>
+        <p>Our inaugural fundraising dinner — an evening of stories, performances, and purpose. Help us raise seed funds for our first year of programs.</p>
+        <div class="event-meta">
+          <span>📍 <b>Chennai · Venue TBA</b></span>
+          <span>🕘 <b>6:30 PM onwards</b></span>
+          <span>🎟 <b>Tickets: ₹1,500 per person</b></span>
+        </div>
+        <button class="event-register">Get Tickets</button>
+      </div>
+    </div>
+
+  </div>
+  <p class="events-note">More events coming soon — follow us or check back here for updates.</p>
+</section>
+
+<!-- DONATE -->
+<section class="donate" id="donate">
+  <h2>Be our founding supporter</h2>
+  <p>We are just weeks old. Your donation today won't just fund a program — it will lay the foundation of an organisation built to last. Be among the first to believe in us.</p>
+  <div class="donate-options">
+    <button class="donate-btn">₹500</button>
+    <button class="donate-btn active">₹1,000</button>
+    <button class="donate-btn">₹2,500</button>
+    <button class="donate-btn">₹5,000</button>
+    <button class="donate-btn">Custom</button>
+  </div>
+  <button class="donate-main-btn">Donate Now</button>
+  <p class="donate-note">80G tax exemption available · Secure payment · 100% goes to programs</p>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <div class="contact-info">
+      <div class="section-label">Get in Touch</div>
+      <h2 class="section-title">We'd love to hear from you</h2>
+      <p>Whether you want to volunteer, partner with us, or simply learn more about our work — our doors are always open.</p>
+      <div class="contact-detail">
+        <div class="contact-icon">📍</div>
+        <div><p>Address</p><p>No. 12, Gandhi Nagar, Madurai – 625001, Tamil Nadu, India</p></div>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-icon">📧</div>
+        <div><p>Email</p><p>hello@yavarumkelir.org</p></div>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-icon">📞</div>
+        <div><p>Phone</p><p>+91 98400 00000</p></div>
+      </div>
+    </div>
+    <div class="contact-form">
+      <div class="form-group">
+        <label>Your name</label>
+        <input type="text" placeholder="e.g. Priya Suresh"/>
+      </div>
+      <div class="form-group">
+        <label>Email address</label>
+        <input type="email" placeholder="you@email.com"/>
+      </div>
+      <div class="form-group">
+        <label>I want to...</label>
+        <select>
+          <option>Volunteer</option>
+          <option>Partner / Collaborate</option>
+          <option>Donate</option>
+          <option>Learn more</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Message</label>
+        <textarea placeholder="Tell us how you'd like to get involved..."></textarea>
+      </div>
+      <button class="form-submit">Send Message</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-logo">Yavarum Kelir · யாவரும் கேளிர்</div>
+  <div class="foot-tagline">Everyone Shall Thrive — Non-Profit Organization, Tamil Nadu, India</div>
+  <div class="foot-links">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#programs">Programs</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#events">Events</a>
+    <a href="#donate">Donate</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <div class="foot-bottom">© 2026 Yavarum Kelir. All rights reserved. · Registration in progress under the Societies Registration Act.</div>
+</footer>
+
+<script>
+document.querySelectorAll('.donate-btn').forEach(b=>{
+  b.addEventListener('click',function(){
+    document.querySelectorAll('.donate-btn').forEach(x=>x.classList.remove('active'));
+    this.classList.add('active');
+  });
+});
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    e.preventDefault();
+    const t=document.querySelector(a.getAttribute('href'));
+    if(t) t.scrollIntoView({behavior:'smooth'});
+  });
+});
+</script>
+</body>
+</html>
