@@ -72,15 +72,22 @@ section{padding:4rem 2.5rem}
 
 /* GALLERY */
 .gallery{background:#fffdf8}
-.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;max-width:1000px;margin:0 auto}
-.gallery-item{border-radius:12px;overflow:hidden;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;font-size:2rem;font-weight:700;color:#fff;position:relative}
-.gallery-item span{position:relative;z-index:1;font-size:0.85rem;font-weight:600;text-align:center;padding:0 1rem;line-height:1.4}
-.g1{background:linear-gradient(135deg,#e07b39,#f5a060)}
-.g2{background:linear-gradient(135deg,#3a7d44,#5faa6e)}
-.g3{background:linear-gradient(135deg,#d44c3a,#e8765e)}
-.g4{background:linear-gradient(135deg,#7b55c5,#a07de8)}
-.g5{background:linear-gradient(135deg,#2a8fa0,#4fbdce)}
-.g6{background:linear-gradient(135deg,#c08020,#e8aa50)}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;max-width:1000px;margin:0 auto}
+.gallery-item{border-radius:12px;overflow:hidden;position:relative;aspect-ratio:4/3;background:#f0dfc0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0.4rem}
+.gallery-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.3s}
+.gallery-item:hover img{transform:scale(1.05)}
+.gallery-caption{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(40,20,5,0.82));color:#fff;padding:1.8rem 0.9rem 0.7rem;opacity:0;transition:opacity 0.3s}
+.gallery-item:hover .gallery-caption{opacity:1}
+.gallery-caption h4{font-size:0.85rem;font-weight:700;margin-bottom:2px}
+.gallery-caption p{font-size:0.73rem;opacity:0.85}
+.gallery-placeholder{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.4rem;border:2px dashed #d0b890;border-radius:12px;color:#b09060;padding:1rem;text-align:center;cursor:pointer}
+.gallery-placeholder span:first-child{font-size:1.8rem}
+.gallery-placeholder .ph-title{font-size:0.82rem;font-weight:600;color:#8a6040}
+.gallery-placeholder .ph-sub{font-size:0.72rem;color:#b09060;line-height:1.4}
+.gallery-tag{position:absolute;top:0.6rem;left:0.6rem;background:#e07b39;color:#fff;font-size:0.68rem;font-weight:700;padding:0.2rem 0.55rem;border-radius:10px}
+.gallery-tag.green{background:#3a7d44}
+.gallery-tag.blue{background:#2a8fa0}
+.gallery-tag.purple{background:#7b55c5}
 
 /* EVENTS */
 .events{background:#fdf6ec}
@@ -264,22 +271,36 @@ footer .foot-bottom{font-size:0.75rem;opacity:0.5;border-top:1px solid rgba(200,
 <section class="gallery" id="gallery">
   <div class="section-header" style="text-align:center;margin-bottom:2rem">
     <div class="section-label">Our Impact</div>
-    <h2 class="section-title">Moments that matter</h2>
+    <h2 class="section-title">Our first event — Annadanam 🍱</h2>
+    <p class="section-sub" style="margin:0 auto">We completed our very first official charity event — serving meals to those in need. Many more to come.</p>
   </div>
   <div class="gallery-grid">
-  <div class="gallery-item" style="background:none">
-  <img src="images/annadanam-1.jpeg" alt="Annadanam" style="width:100%;height:100%;object-fit:cover;border-radius:12px;">
+
+    <div class="gallery-item">
+      <img src="images/annadanam-1.jpeg" alt="Annadanam Event">
+      <span class="gallery-tag green">Annadanam</span>
+      <div class="gallery-caption"><h4>Annadanam — Our First Charity Event</h4><p>Serving food with love to those in need</p></div>
+    </div>
+
+    <div class="gallery-item">
+      <img src="images/annadanam-2.jpeg" alt="Annadanam Event">
+      <span class="gallery-tag green">Annadanam</span>
+      <div class="gallery-caption"><h4>Annadanam — Volunteers in Action</h4><p>Our team coming together to serve</p></div>
+    </div>
+
+    <div class="gallery-item">
+      <img src="images/annadanam-3.jpeg" alt="Annadanam Event">
+      <span class="gallery-tag green">Annadanam</span>
+      <div class="gallery-caption"><h4>Annadanam — Community Spirit</h4><p>Every meal shared is a blessing given</p></div>
+    </div>
+
+    <div class="gallery-item">
+      <img src="images/annadanam-4.jpeg" alt="Annadanam Event">
+      <span class="gallery-tag green">Annadanam</span>
+      <div class="gallery-caption"><h4>Annadanam — Moments of Joy</h4><p>Smiles that make every effort worthwhile</p></div>
+    </div>
   </div>
-   <div class="gallery-item" style="background:none">
-  <img src="images/annadanam-2.jpeg" alt="Annadanam" style="width:100%;height:100%;object-fit:cover;border-radius:12px;">
-  </div>
-    <div class="gallery-item" style="background:none">
-  <img src="images/annadanam-3.jpeg" alt="Annadanam" style="width:100%;height:100%;object-fit:cover;border-radius:12px;">
-  </div>
-    <div class="gallery-item" style="background:none">
-  <img src="images/annadanam-4.jpeg" alt="Annadanam" style="width:100%;height:100%;object-fit:cover;border-radius:12px;">
-  </div>
-  </div>
+  <p style="text-align:center;margin-top:1.5rem;color:#9a7450;font-size:0.83rem">✨ Showcasing our first official charity event — <strong>Annadanam, May 2026</strong></p>
 </section>
 
 <!-- EVENTS -->
