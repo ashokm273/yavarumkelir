@@ -121,12 +121,12 @@ section{padding:4rem 2.5rem}
 .event-register.outline:hover{background:#3a7d44;color:#fff}
 .events-note{text-align:center;margin-top:1.8rem;font-size:0.83rem;color:#9a7450}
 
-/* TEAM SLIDESHOW */
+/* TEAM */
 .team{background:#fff7ed;padding:4rem 2.5rem;text-align:center}
-.slideshow-wrapper{position:relative;max-width:1000px;margin:0 auto;overflow:hidden}
+.slideshow-wrapper{position:relative;max-width:900px;margin:0 auto;overflow:hidden}
 .slideshow-track{display:flex;transition:transform 0.6s cubic-bezier(.4,0,.2,1)}
-.slide{min-width:100%;display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;padding:0.5rem}
-.member-card{background:#fff;border-radius:16px;border:1px solid #f0dfc0;padding:1rem 0.8rem 0.9rem;width:110px;text-align:center;box-shadow:0 4px 16px rgba(180,100,40,0.07);transition:transform 0.2s}
+.slide{min-width:100%;display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;padding:0.5rem}
+.member-card{background:#fff;border-radius:16px;border:1px solid #f0dfc0;padding:1rem 0.8rem 0.9rem;text-align:center;box-shadow:0 4px 16px rgba(180,100,40,0.07);transition:transform 0.2s}
 .member-card:hover{transform:translateY(-5px)}
 .member-photo{width:70px;height:70px;border-radius:50%;object-fit:cover;border:3px solid #e07b39;margin:0 auto 0.6rem;display:block;background:#fde8cb}
 .member-photo-placeholder{width:70px;height:70px;border-radius:50%;background:linear-gradient(135deg,#fde8cb,#f5c08a);border:3px solid #e07b39;margin:0 auto 0.6rem;display:flex;align-items:center;justify-content:center;font-size:1.5rem}
@@ -325,11 +325,10 @@ footer .foot-bottom{font-size:0.75rem;opacity:0.5;border-top:1px solid rgba(200,
   <div class="section-label">Our People</div>
   <h2 class="section-title">Our 38 Founding Members</h2>
   <p class="section-sub" style="margin:0 auto 2rem">The hearts behind Yavarum Kelir — 38 compassionate souls who have been serving quietly since 2019. No titles, no hierarchy — just people who care.</p>
-
   <div class="slideshow-wrapper">
     <div class="slideshow-track" id="slideshowTrack">
 
-      <!-- SLIDE 1 — 1–8 -->
+      <!-- SLIDE 1: 1–8 (4×2 grid) -->
       <div class="slide">
         <div class="member-card"><img class="member-photo" src="images/member-1.jpeg" alt="Member" onerror="this.outerHTML='<div class=\'member-photo-placeholder\'>👤</div>'"><div class="member-label">Member</div></div>
         <div class="member-card"><img class="member-photo" src="images/member-2.jpeg" alt="Member" onerror="this.outerHTML='<div class=\'member-photo-placeholder\'>👤</div>'"><div class="member-label">Member</div></div>
@@ -341,7 +340,7 @@ footer .foot-bottom{font-size:0.75rem;opacity:0.5;border-top:1px solid rgba(200,
         <div class="member-card"><img class="member-photo" src="images/member-8.jpeg" alt="Member" onerror="this.outerHTML='<div class=\'member-photo-placeholder\'>👤</div>'"><div class="member-label">Member</div></div>
       </div>
 
-      <!-- SLIDE 2 — 9–16 -->
+      <!-- SLIDE 2: 9–16 -->
       <div class="slide">
         <div class="member-card"><img class="member-photo" src="images/member-9.jpeg" alt="Member" onerror="this.outerHTML='<div class=\'member-photo-placeholder\'>👤</div>'"><div class="member-label">Member</div></div>
         <div class="member-card"><img class="member-photo" src="images/member-10.jpeg" alt="Member" onerror="this.outerHTML='<div class=\'member-photo-placeholder\'>👤</div>'"><div class="member-label">Member</div></div>
@@ -353,7 +352,7 @@ footer .foot-bottom{font-size:0.75rem;opacity:0.5;border-top:1px solid rgba(200,
         <div class="member-card"><img class="member-photo" src="images/member-16.jpeg" alt="Member" onerror="this.outerHTML='<div class=\'member-photo-placeholder\'>👤</div>'"><div class="member-label">Member</div></div>
       </div>
 
-      <!-- SLIDE 3 — 17–24 -->
+      <!-- SLIDE 3: 17–24 -->
       <div class="slide">
         <div class="member-card"><img class="member-photo" src="images/member-17.jpeg" alt="Member" onerror="this.outerHTML='<div class=\'member-photo-placeholder\'>👤</div>'"><div class="member-label">Member</div></div>
         <div class="member-card"><img class="member-photo" src="images/member-18.jpeg" alt="Member" onerror="this.outerHTML='<div class=\'member-photo-placeholder\'>👤</div>'"><div class="member-label">Member</div></div>
@@ -365,7 +364,7 @@ footer .foot-bottom{font-size:0.75rem;opacity:0.5;border-top:1px solid rgba(200,
         <div class="member-card"><img class="member-photo" src="images/member-24.jpeg" alt="Member" onerror="this.outerHTML='<div class=\'member-photo-placeholder\'>👤</div>'"><div class="member-label">Member</div></div>
       </div>
 
-      <!-- SLIDE 4 — 25–32 -->
+      <!-- SLIDE 4: 25–32 -->
       <div class="slide">
         <div class="member-card"><img class="member-photo" src="images/member-25.jpeg" alt="Member" onerror="this.outerHTML='<div class=\'member-photo-placeholder\'>👤</div>'"><div class="member-label">Member</div></div>
         <div class="member-card"><img class="member-photo" src="images/member-26.jpeg" alt="Member" onerror="this.outerHTML='<div class=\'member-photo-placeholder\'>👤</div>'"><div class="member-label">Member</div></div>
@@ -377,8 +376,8 @@ footer .foot-bottom{font-size:0.75rem;opacity:0.5;border-top:1px solid rgba(200,
         <div class="member-card"><img class="member-photo" src="images/member-32.jpeg" alt="Member" onerror="this.outerHTML='<div class=\'member-photo-placeholder\'>👤</div>'"><div class="member-label">Member</div></div>
       </div>
 
-      <!-- SLIDE 5 — 33–38 -->
-      <div class="slide">
+      <!-- SLIDE 5: 33–38 (centred in grid) -->
+      <div class="slide" style="grid-template-columns:repeat(3,1fr);max-width:400px;margin:0 auto">
         <div class="member-card"><img class="member-photo" src="images/member-33.jpeg" alt="Member" onerror="this.outerHTML='<div class=\'member-photo-placeholder\'>👤</div>'"><div class="member-label">Member</div></div>
         <div class="member-card"><img class="member-photo" src="images/member-34.jpeg" alt="Member" onerror="this.outerHTML='<div class=\'member-photo-placeholder\'>👤</div>'"><div class="member-label">Member</div></div>
         <div class="member-card"><img class="member-photo" src="images/member-35.jpeg" alt="Member" onerror="this.outerHTML='<div class=\'member-photo-placeholder\'>👤</div>'"><div class="member-label">Member</div></div>
@@ -390,7 +389,7 @@ footer .foot-bottom{font-size:0.75rem;opacity:0.5;border-top:1px solid rgba(200,
     </div>
     <div class="slide-controls">
       <button class="slide-btn" id="prevBtn">&#8592;</button>
-      <div class="slide-dots" id="slideDots">
+      <div class="slide-dots">
         <div class="dot active"></div>
         <div class="dot"></div>
         <div class="dot"></div>
