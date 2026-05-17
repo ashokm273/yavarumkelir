@@ -121,6 +121,24 @@ section{padding:4rem 2.5rem}
 .event-register.outline:hover{background:#3a7d44;color:#fff}
 .events-note{text-align:center;margin-top:1.8rem;font-size:0.83rem;color:#9a7450}
 
+/* TEAM SLIDESHOW */
+.team{background:#fff7ed;padding:4rem 2.5rem;text-align:center}
+.slideshow-wrapper{position:relative;max-width:1000px;margin:0 auto;overflow:hidden}
+.slideshow-track{display:flex;transition:transform 0.6s cubic-bezier(.4,0,.2,1)}
+.slide{min-width:100%;display:flex;justify-content:center;gap:1.5rem;flex-wrap:wrap;padding:0.5rem}
+.member-card{background:#fff;border-radius:16px;border:1px solid #f0dfc0;padding:1.2rem 1rem 1rem;width:150px;text-align:center;box-shadow:0 4px 16px rgba(180,100,40,0.07);transition:transform 0.2s}
+.member-card:hover{transform:translateY(-5px)}
+.member-photo{width:90px;height:90px;border-radius:50%;object-fit:cover;border:3px solid #e07b39;margin:0 auto 0.7rem;display:block;background:#fde8cb}
+.member-photo-placeholder{width:90px;height:90px;border-radius:50%;background:linear-gradient(135deg,#fde8cb,#f5c08a);border:3px solid #e07b39;margin:0 auto 0.7rem;display:flex;align-items:center;justify-content:center;font-size:1.8rem}
+.member-name{font-size:0.85rem;font-weight:700;color:#3a2a1a;margin-bottom:2px}
+.member-role{font-size:0.72rem;color:#9a7450}
+.slide-controls{display:flex;justify-content:center;align-items:center;gap:1rem;margin-top:1.5rem}
+.slide-btn{width:36px;height:36px;border-radius:50%;border:2px solid #e07b39;background:#fff;color:#e07b39;font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.2s}
+.slide-btn:hover{background:#e07b39;color:#fff}
+.slide-dots{display:flex;gap:6px}
+.dot{width:8px;height:8px;border-radius:50%;background:#f0dfc0;cursor:pointer;transition:background 0.2s}
+.dot.active{background:#e07b39}
+
 /* DONATE */
 .donate{background:linear-gradient(135deg,#e07b39,#c8521c);text-align:center;color:#fff;padding:4.5rem 2.5rem}
 .donate h2{font-size:2.2rem;font-weight:800;margin-bottom:0.7rem}
@@ -303,6 +321,130 @@ footer .foot-bottom{font-size:0.75rem;opacity:0.5;border-top:1px solid rgba(200,
   <p style="text-align:center;margin-top:1.5rem;color:#9a7450;font-size:0.83rem">✨ Showcasing our first official charity event — <strong>Annadanam, May 2026</strong></p>
 </section>
 
+<!-- FOUNDING MEMBERS -->
+<section class="team" id="team">
+  <div class="section-label">Our People</div>
+  <h2 class="section-title">Founding Members</h2>
+  <p class="section-sub" style="margin:0 auto 2rem">The hearts behind Yavarum Kelir — a dedicated group who have been serving quietly since 2019.</p>
+
+  <div class="slideshow-wrapper">
+    <div class="slideshow-track" id="slideshowTrack">
+
+      <!-- SLIDE 1 -->
+      <div class="slide">
+        <div class="member-card">
+          <img class="member-photo" src="images/member-1.jpg" alt="Member"
+            onerror="this.outerHTML='<div class=\'member-photo-placeholder\'>👤</div>'">
+          <div class="member-name">Member Name</div>
+          <div class="member-role">Founder</div>
+        </div>
+        <div class="member-card">
+          <img class="member-photo" src="images/member-2.jpg" alt="Member"
+            onerror="this.outerHTML='<div class=\'member-photo-placeholder\'>👤</div>'">
+          <div class="member-name">Member Name</div>
+          <div class="member-role">Co-Founder</div>
+        </div>
+        <div class="member-card">
+          <img class="member-photo" src="images/member-3.jpg" alt="Member"
+            onerror="this.outerHTML='<div class=\'member-photo-placeholder\'>👤</div>'">
+          <div class="member-name">Member Name</div>
+          <div class="member-role">Core Member</div>
+        </div>
+        <div class="member-card">
+          <img class="member-photo" src="images/member-4.jpg" alt="Member"
+            onerror="this.outerHTML='<div class=\'member-photo-placeholder\'>👤</div>'">
+          <div class="member-name">Member Name</div>
+          <div class="member-role">Core Member</div>
+        </div>
+        <div class="member-card">
+          <img class="member-photo" src="images/member-5.jpg" alt="Member"
+            onerror="this.outerHTML='<div class=\'member-photo-placeholder\'>👤</div>'">
+          <div class="member-name">Member Name</div>
+          <div class="member-role">Core Member</div>
+        </div>
+      </div>
+
+      <!-- SLIDE 2 -->
+      <div class="slide">
+        <div class="member-card">
+          <img class="member-photo" src="images/member-6.jpg" alt="Member"
+            onerror="this.outerHTML='<div class=\'member-photo-placeholder\'>👤</div>'">
+          <div class="member-name">Member Name</div>
+          <div class="member-role">Core Member</div>
+        </div>
+        <div class="member-card">
+          <img class="member-photo" src="images/member-7.jpg" alt="Member"
+            onerror="this.outerHTML='<div class=\'member-photo-placeholder\'>👤</div>'">
+          <div class="member-name">Member Name</div>
+          <div class="member-role">Core Member</div>
+        </div>
+        <div class="member-card">
+          <img class="member-photo" src="images/member-8.jpg" alt="Member"
+            onerror="this.outerHTML='<div class=\'member-photo-placeholder\'>👤</div>'">
+          <div class="member-name">Member Name</div>
+          <div class="member-role">Core Member</div>
+        </div>
+        <div class="member-card">
+          <img class="member-photo" src="images/member-9.jpg" alt="Member"
+            onerror="this.outerHTML='<div class=\'member-photo-placeholder\'>👤</div>'">
+          <div class="member-name">Member Name</div>
+          <div class="member-role">Core Member</div>
+        </div>
+        <div class="member-card">
+          <img class="member-photo" src="images/member-10.jpg" alt="Member"
+            onerror="this.outerHTML='<div class=\'member-photo-placeholder\'>👤</div>'">
+          <div class="member-name">Member Name</div>
+          <div class="member-role">Core Member</div>
+        </div>
+      </div>
+
+      <!-- SLIDE 3 -->
+      <div class="slide">
+        <div class="member-card">
+          <img class="member-photo" src="images/member-11.jpg" alt="Member"
+            onerror="this.outerHTML='<div class=\'member-photo-placeholder\'>👤</div>'">
+          <div class="member-name">Member Name</div>
+          <div class="member-role">Core Member</div>
+        </div>
+        <div class="member-card">
+          <img class="member-photo" src="images/member-12.jpg" alt="Member"
+            onerror="this.outerHTML='<div class=\'member-photo-placeholder\'>👤</div>'">
+          <div class="member-name">Member Name</div>
+          <div class="member-role">Core Member</div>
+        </div>
+        <div class="member-card">
+          <img class="member-photo" src="images/member-13.jpg" alt="Member"
+            onerror="this.outerHTML='<div class=\'member-photo-placeholder\'>👤</div>'">
+          <div class="member-name">Member Name</div>
+          <div class="member-role">Core Member</div>
+        </div>
+        <div class="member-card">
+          <img class="member-photo" src="images/member-14.jpg" alt="Member"
+            onerror="this.outerHTML='<div class=\'member-photo-placeholder\'>👤</div>'">
+          <div class="member-name">Member Name</div>
+          <div class="member-role">Core Member</div>
+        </div>
+        <div class="member-card">
+          <img class="member-photo" src="images/member-15.jpg" alt="Member"
+            onerror="this.outerHTML='<div class=\'member-photo-placeholder\'>👤</div>'">
+          <div class="member-name">Member Name</div>
+          <div class="member-role">Core Member</div>
+        </div>
+      </div>
+
+    </div>
+    <div class="slide-controls">
+      <button class="slide-btn" id="prevBtn">&#8592;</button>
+      <div class="slide-dots" id="slideDots">
+        <div class="dot active"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+      <button class="slide-btn" id="nextBtn">&#8594;</button>
+    </div>
+  </div>
+</section>
+  
 <!-- EVENTS -->
 <section class="events" id="events">
   <div class="section-header" style="text-align:center;margin-bottom:2rem">
